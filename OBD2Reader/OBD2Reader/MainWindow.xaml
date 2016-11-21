@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:OBD2Reader"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-    </Grid>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <Label Content="{Binding Path=Car.Make}"/>
+        <Label Content="{Binding Path=Car.Model}"/>
+    </StackPanel>
 </Window>
