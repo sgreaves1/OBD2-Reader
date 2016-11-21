@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using OBD2Reader.ViewModel;
+﻿using OBD2Reader.ViewModel;
 
 namespace OBD2Reader
 {
