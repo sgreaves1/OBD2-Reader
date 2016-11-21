@@ -4,13 +4,8 @@
     {
         private string _make;
         private string _model;
-
-        public CarModel(string make, string model)
-        {
-            Make = make;
-            Model = model;
-        }
-
+        private int _year;
+        
         public string Make
         {
             get { return _make; }
@@ -27,6 +22,16 @@
             set
             {
                 _model = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int Year
+        {
+            get { return _year;}
+            set
+            {
+                _year = value;
                 OnPropertyChanged();
             }
         }

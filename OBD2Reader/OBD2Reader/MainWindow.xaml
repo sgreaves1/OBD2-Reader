@@ -10,5 +10,6 @@
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
         <Label Content="{Binding Path=Car.Make}"/>
         <Label Content="{Binding Path=Car.Model}"/>
+        <Label Content="{Binding Path=Car.Year}"/>
     </StackPanel>
 </Window>
