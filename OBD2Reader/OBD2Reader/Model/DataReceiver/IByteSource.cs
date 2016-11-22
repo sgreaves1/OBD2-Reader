@@ -8,6 +8,10 @@ namespace OBD2Reader.Model.DataReceiver
 
         void Write(byte[] bytes);
 
+        bool IsConnected();
+
         event EventHandler DataReceived;
+
+        event EventHandler ConnectionChanged;
     }
 }

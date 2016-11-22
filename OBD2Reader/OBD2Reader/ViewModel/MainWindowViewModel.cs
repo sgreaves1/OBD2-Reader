@@ -1,4 +1,5 @@
 ﻿using OBD2Reader.Model;
+using OBD2Reader.Model.DataReceiver;
 
 namespace OBD2Reader.ViewModel
 {
@@ -6,12 +7,29 @@ namespace OBD2Reader.ViewModel
     {
         private CarModel _car;
 
+        private DataReceiver _dataReceiver;
+
+        public MainWindowViewModel()
+        {
+            DataReceiver = new DataReceiver(new SerialPortByteSource());
+        }
+
         public CarModel Car
         {
             get { return _car; }
             set
             {
                 _car = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DataReceiver DataReceiver
+        {
+            get { return _dataReceiver; }
+            set
+            {
+                _dataReceiver = value;
                 OnPropertyChanged();
             }
         }
