@@ -8,6 +8,7 @@ namespace OBD2ReaderTests
         [TestMethod]
         public void TestMethod1()
         {
+            
         }
     }
 }
