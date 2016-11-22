@@ -10,12 +10,12 @@ namespace OBD2Reader.Model.DataReceiver
         
         public DataReceiver(IByteSource byteSource)
         {
-            ByteSource = _byteSource;
+            ByteSource = byteSource;
 
             ByteSource.DataReceived += ByteSourceOnDataReceived;
             ByteSource.ConnectionChanged += ByteSourceOnConnectionChanged;
 
-            IsConnected = false;
+            IsConnected = byteSource.IsConnected();
         }
 
         private void ByteSourceOnConnectionChanged(object sender, EventArgs eventArgs)

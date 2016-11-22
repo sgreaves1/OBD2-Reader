@@ -11,7 +11,7 @@ namespace OBD2Reader.ViewModel
 
         public MainWindowViewModel()
         {
-            DataReceiver = new DataReceiver(new SerialPortByteSource());
+            DataReceiver = new DataReceiver(new SerialPortByteSource(new SerialPortSettings() {Name = "Com8"}));
         }
 
         public CarModel Car

@@ -63,7 +63,8 @@
     <Compile Include="Model\CarModel.cs" />
     <Compile Include="Model\DataReceiver\DataReceiver.cs" />
     <Compile Include="Model\DataReceiver\IByteSource.cs" />
-    <Compile Include="Model\DataReceiver\SerialPort.cs" />
+    <Compile Include="Model\DataReceiver\SerialPortByteSource.cs" />
+    <Compile Include="Model\DataReceiver\SerialPortSettings.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DesignerViewModel\DesignerMainWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />

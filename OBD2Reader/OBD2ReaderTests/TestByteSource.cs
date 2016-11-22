@@ -15,6 +15,12 @@ namespace OBD2ReaderTests
             throw new NotImplementedException();
         }
 
+        public bool IsConnected()
+        {
+            throw new NotImplementedException();
+        }
+
         public event EventHandler DataReceived;
+        public event EventHandler ConnectionChanged;
     }
 }
