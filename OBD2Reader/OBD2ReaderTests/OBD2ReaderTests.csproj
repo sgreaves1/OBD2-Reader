@@ -50,8 +50,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ByteSourceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestByteSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OBD2Reader\OBD2Reader.csproj">
+      <Project>{cb450ac1-4bfe-4cfa-8ef9-c811c92673f3}</Project>
+      <Name>OBD2Reader</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

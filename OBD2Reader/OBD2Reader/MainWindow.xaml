@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:design="clr-namespace:OBD2Reader.ViewModel.DesignerViewModel"
+        xmlns:xamlIconLibrary="clr-namespace:XamlIconLibrary;assembly=XamlIconLibrary"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance Type=design:DesignerMainWindowViewModel, IsDesignTimeCreatable=True}">
@@ -15,7 +16,9 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Canvas Width="15" Height="15" Background="Red" ToolTip="Connection" HorizontalAlignment="Left"/>
-            <Button Grid.Column="1" Width="50"/>
+            <Button Grid.Column="1" Background="AliceBlue">
+                <xamlIconLibrary:GoogleMaterialIcon Icon="Settings" Width="20" Height="20" Foreground="Black" />
+            </Button>
         </Grid>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -26,7 +29,7 @@
         
         <TabControl>
             <TabItem Header="Live"></TabItem>
-            <TabItem Header="State"></TabItem>
+            <TabItem Header="Errors"></TabItem>
         </TabControl>
     </StackPanel>
     
