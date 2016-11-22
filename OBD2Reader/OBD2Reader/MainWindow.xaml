@@ -34,7 +34,7 @@
                 </Canvas.Style>
             </Canvas>
             
-            <Button Grid.Column="1" Background="AliceBlue">
+            <Button Grid.Column="1" Background="AliceBlue" ToolTip="Settings">
                 <xamlIconLibrary:GoogleMaterialIcon Icon="Settings" Width="20" Height="20" Foreground="Black" />
             </Button>
         </Grid>
