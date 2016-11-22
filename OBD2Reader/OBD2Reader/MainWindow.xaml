@@ -8,6 +8,16 @@
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance Type=design:DesignerMainWindowViewModel, IsDesignTimeCreatable=True}">
     <StackPanel>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Canvas Width="15" Height="15" Background="Red" ToolTip="Connection" HorizontalAlignment="Left"/>
+            <Button Grid.Column="1" Width="50"/>
+        </Grid>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Label Content="{Binding Path=Car.Make}"/>
             <Label Content="{Binding Path=Car.Model}"/>
