@@ -1,4 +1,7 @@
-﻿using OBD2Reader.Model;
+﻿using System;
+using System.Windows.Input;
+using OBD2Reader.Command;
+using OBD2Reader.Model;
 using OBD2Reader.Model.DataReceiver;
 
 namespace OBD2Reader.ViewModel
@@ -12,6 +15,8 @@ namespace OBD2Reader.ViewModel
         public MainWindowViewModel()
         {
             DataReceiver = new DataReceiver(new SerialPortByteSource(new SerialPortSettings() {Name = "Com8"}));
+
+            InitCommands();
         }
 
         public CarModel Car
@@ -33,5 +38,22 @@ namespace OBD2Reader.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public event EventHandler SettingsEvent;
+
+        #region Commands
+        public ICommand SettingsCommand { get; set; }
+
+        private void InitCommands()
+        {
+            SettingsCommand = new RelayCommand(MethodToExecute);
+        }
+
+        private void MethodToExecute()
+        {
+            SettingsEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        #endregion
     }
 }

@@ -1,4 +1,6 @@
-﻿using OBD2Reader.ViewModel;
+﻿using System;
+using System.CodeDom;
+using OBD2Reader.ViewModel;
 
 namespace OBD2Reader
 {
@@ -11,7 +13,16 @@ namespace OBD2Reader
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel();
+            MainWindowViewModel viewModel = new MainWindowViewModel();
+
+            DataContext = viewModel;
+
+            viewModel.SettingsEvent += ViewModelOnSettingsEvent;
+        }
+
+        private void ViewModelOnSettingsEvent(object sender, EventArgs eventArgs)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\CarModel.cs" />
     <Compile Include="Model\DataReceiver\DataReceiver.cs" />
