@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OBD2Reader.Model.SerialPort
+namespace OBD2Reader.Model.DataReceiver
 {
     public interface IByteSource
     {

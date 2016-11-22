@@ -1,5 +1,4 @@
 ﻿using System;
-using OBD2Reader.Model.SerialPort;
 
 namespace OBD2Reader.Model.DataReceiver
 {
