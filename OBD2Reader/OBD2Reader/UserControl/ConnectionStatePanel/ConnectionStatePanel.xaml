@@ -4,8 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="Root">
     <Grid>
-            
+        <Canvas Width="15" Height="15" HorizontalAlignment="Left">
+            <Canvas.Style>
+                <Style TargetType="Canvas">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=Root, Path=IsConnected}" Value="true">
+                            <Setter Property="Canvas.Background" Value="Green"/>
+                            <Setter Property="ToolTip" Value="Connected"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding ElementName=Root, Path=IsConnected}" Value="false">
+                            <Setter Property="Canvas.Background" Value="Red"/>
+                            <Setter Property="ToolTip" Value="Disconnected"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Canvas.Style>
+        </Canvas>
     </Grid>
 </UserControl>

@@ -7,6 +7,7 @@
         xmlns:xamlIconLibrary="clr-namespace:XamlIconLibrary;assembly=XamlIconLibrary"
         xmlns:settingsPanel="clr-namespace:OBD2Reader.UserControl.SettingsPanel"
         xmlns:carDetails="clr-namespace:OBD2Reader.UserControl.CarDetails"
+        xmlns:connectionStatePanel="clr-namespace:OBD2Reader.UserControl.ConnectionStatePanel"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance Type=design:DesignerMainWindowViewModel, IsDesignTimeCreatable=True}">
@@ -18,23 +19,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             
-            <Canvas Width="15" Height="15" HorizontalAlignment="Left">
-                <Canvas.Style>
-                    <Style TargetType="Canvas">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Path=DataReceiver.IsConnected}" Value="true">
-                                <Setter Property="Canvas.Background" Value="Green"/>
-                                <Setter Property="ToolTip" Value="Connected"/>
-                            </DataTrigger>
-
-                            <DataTrigger Binding="{Binding Path=DataReceiver.IsConnected}" Value="false">
-                                <Setter Property="Canvas.Background" Value="Red"/>
-                                <Setter Property="ToolTip" Value="Disconnected"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Canvas.Style>
-            </Canvas>
+            <connectionStatePanel:ConnectionStatePanel IsConnected="{Binding Path=DataReceiver.IsConnected}"/>
 
             <Button Grid.Column="1" Background="AliceBlue" ToolTip="Settings" Command="{Binding Path=SettingsCommand}">
                 <xamlIconLibrary:GoogleMaterialIcon Icon="Settings" Width="20" Height="20" Foreground="Black" />
