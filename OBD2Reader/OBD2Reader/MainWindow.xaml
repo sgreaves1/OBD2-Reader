@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:design="clr-namespace:OBD2Reader.ViewModel.DesignerViewModel"
         xmlns:xamlIconLibrary="clr-namespace:XamlIconLibrary;assembly=XamlIconLibrary"
+        xmlns:settingsPanel="clr-namespace:OBD2Reader.UserControl.SettingsPanel"
+        xmlns:carDetails="clr-namespace:OBD2Reader.UserControl.CarDetails"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         d:DataContext="{d:DesignInstance Type=design:DesignerMainWindowViewModel, IsDesignTimeCreatable=True}">
@@ -39,12 +41,8 @@
             </Button>
         </Grid>
         
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Label Content="{Binding Path=Car.Make}"/>
-            <Label Content="{Binding Path=Car.Model}"/>
-            <Label Content="{Binding Path=Car.Year}"/>
-        </StackPanel>
-        
+        <carDetails:CarDetails Car="{Binding Path=Car}"/>
+       
         <TabControl>
             <TabItem Header="Live"></TabItem>
             <TabItem Header="Errors"></TabItem>

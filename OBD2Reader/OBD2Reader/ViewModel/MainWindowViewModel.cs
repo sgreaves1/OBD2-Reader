@@ -16,6 +16,9 @@ namespace OBD2Reader.ViewModel
         {
             DataReceiver = new DataReceiver(new SerialPortByteSource(new SerialPortSettings() {Name = "Com8"}));
 
+            Car = new CarModel() { Make = "Vauxhall", Model = "Corsa", Year = 2001};
+
+
             InitCommands();
         }
 

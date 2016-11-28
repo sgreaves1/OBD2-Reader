@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using OBD2Reader.ViewModel;
 
 namespace OBD2Reader
@@ -22,7 +21,7 @@ namespace OBD2Reader
 
         private void ViewModelOnSettingsEvent(object sender, EventArgs eventArgs)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
