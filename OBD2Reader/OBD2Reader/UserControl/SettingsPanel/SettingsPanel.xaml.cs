@@ -1,5 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.IO.Ports;
+using System.Windows.Input;
+using OBD2Reader.Command;
 
 namespace OBD2Reader.UserControl.SettingsPanel
 {
@@ -14,7 +17,7 @@ namespace OBD2Reader.UserControl.SettingsPanel
         {
             InitializeComponent();
 
-            RefreshPorts();
+            InitCommands();
         }
 
         public ObservableCollection<string> ComPortNames
@@ -33,6 +36,23 @@ namespace OBD2Reader.UserControl.SettingsPanel
             {
                 ComPortNames.Add(name);
             }
+        }
+
+        public ICommand RefreshPortsCommand { get; set; }
+
+        private void InitCommands()
+        {
+            RefreshPortsCommand = new RelayCommand(ExecuteRefreshPortsCommand, CanExecuteRefreshPortsCommand);
+        }
+
+        private bool CanExecuteRefreshPortsCommand()
+        {
+            return true;
+        }
+
+        private void ExecuteRefreshPortsCommand()
+        {
+            RefreshPorts();
         }
     }
 }
