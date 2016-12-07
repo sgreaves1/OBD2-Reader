@@ -21,7 +21,8 @@ namespace OBD2Reader
 
         private void ViewModelOnSettingsEvent(object sender, EventArgs eventArgs)
         {
-            
+            SettingsWindow window = new SettingsWindow();
+            window.ShowDialog();
         }
     }
 }
