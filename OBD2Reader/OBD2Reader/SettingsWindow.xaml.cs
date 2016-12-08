@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using OBD2Reader.Model.DataReceiver;
 
 namespace OBD2Reader
 {
@@ -19,6 +20,8 @@ namespace OBD2Reader
     /// </summary>
     public partial class SettingsWindow : Window
     {
+        public SerialPortSettings Settings { get; set; }
+
         public SettingsWindow()
         {
             InitializeComponent();

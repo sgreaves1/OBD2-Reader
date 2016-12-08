@@ -12,13 +12,16 @@ namespace OBD2Reader.ViewModel
 
         private DataReceiver _dataReceiver;
 
+        private SerialPortSettings _settings;
+
         public MainWindowViewModel()
         {
-            DataReceiver = new DataReceiver(new SerialPortByteSource(new SerialPortSettings() {Name = "Com8"}));
+            Settings = new SerialPortSettings();
+
+            DataReceiver = new DataReceiver(new SerialPortByteSource(Settings));
 
             Car = new CarModel() { Make = "Vauxhall", Model = "Corsa", Year = 2001};
-
-
+            
             InitCommands();
         }
 
@@ -39,6 +42,15 @@ namespace OBD2Reader.ViewModel
             {
                 _dataReceiver = value;
                 OnPropertyChanged();
+            }
+        }
+
+        public SerialPortSettings Settings
+        {
+            get { return _settings; }
+            set
+            {
+                _settings = value;
             }
         }
 

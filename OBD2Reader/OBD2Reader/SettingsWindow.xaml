@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:OBD2Reader"
         xmlns:settingsPanel="clr-namespace:OBD2Reader.UserControl.SettingsPanel"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="300" Width="300">
+        Title="SettingsWindow" Height="300" Width="300"
+        x:Name="Root">
     <Grid>
-        <settingsPanel:SettingsPanel></settingsPanel:SettingsPanel>
+        <settingsPanel:SettingsPanel Settings="{Binding Path=Settings, ElementName=Root}"/>
     </Grid>
 </Window>

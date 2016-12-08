@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.IO.Ports;
+using System.Windows;
 using System.Windows.Input;
 using OBD2Reader.Command;
+using OBD2Reader.Model.DataReceiver;
 
 namespace OBD2Reader.UserControl.SettingsPanel
 {
@@ -10,6 +12,12 @@ namespace OBD2Reader.UserControl.SettingsPanel
     /// </summary>
     public partial class SettingsPanel 
     {
+        // Using a DependencyProperty as the backing store for Settings.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SettingsProperty =
+            DependencyProperty.Register("Settings", typeof(SerialPortSettings), typeof(SettingsPanel), new PropertyMetadata(null));
+
+
+
         public SettingsPanel()
         {
             InitializeComponent();
@@ -17,6 +25,12 @@ namespace OBD2Reader.UserControl.SettingsPanel
             InitCommands();
 
             PopulateComPortLists();
+        }
+
+        public SerialPortSettings Settings
+        {
+            get { return (SerialPortSettings)GetValue(SettingsProperty); }
+            set { SetValue(SettingsProperty, value); }
         }
 
         public ObservableCollection<string> ComPortNames { get; set; } = new ObservableCollection<string>();

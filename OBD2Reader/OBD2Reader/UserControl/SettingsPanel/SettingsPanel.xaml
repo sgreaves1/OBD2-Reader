@@ -13,7 +13,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Port:" Width="75"/>
-                <ComboBox Width="100" ItemsSource="{Binding Path=ComPortNames}"/>
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComPortNames}" SelectedItem="{Binding Path=Settings.Name}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
