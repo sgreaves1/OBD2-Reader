@@ -13,8 +13,34 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Port:" Width="75"/>
-                <ComboBox Width="100" ItemsSource="{Binding Path=ComPortNames, UpdateSourceTrigger=PropertyChanged}"  />
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComPortNames}"/>
             </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Baud Rate:" Width="75"/>
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComBaudRates}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Data Bits:" Width="75"/>
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComDataBits}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Stop Bits:" Width="75"/>
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComStopBits}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Parity:" Width="75"/>
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComParities}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Handshake:" Width="75"/>
+                <ComboBox Width="100" ItemsSource="{Binding Path=ComHandShakes}"/>
+            </StackPanel>
+
         </StackPanel>
     </Grid>
 </UserControl>
