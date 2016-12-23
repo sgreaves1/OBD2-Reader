@@ -22,8 +22,10 @@ namespace OBD2Reader
     {
         public SerialPortSettings Settings { get; set; }
 
-        public SettingsWindow()
+        public SettingsWindow(SerialPortSettings settings)
         {
+            Settings = settings;
+
             InitializeComponent();
         }
     }
