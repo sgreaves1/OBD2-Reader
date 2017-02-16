@@ -8,7 +8,12 @@
         mc:Ignorable="d"
         Title="SettingsWindow" Height="300" Width="300"
         x:Name="Root">
-    <Grid>
+    <StackPanel>
         <settingsPanel:SettingsPanel Settings="{Binding Path=Settings, ElementName=Root}"/>
-    </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Cancel" Height="25" Width="50" Margin="10" IsCancel="True"/>
+            <Button Content="OK" Height="25" Margin="10" Width="50" Click="OkButton_Click"/>
+        </StackPanel>
+    </StackPanel>
 </Window>
